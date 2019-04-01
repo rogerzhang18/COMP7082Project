@@ -1,0 +1,19 @@
+package ca.bcit.comp7082.Assignment1;
+
+import android.app.Application;
+
+import net.gotev.uploadservice.UploadService;
+
+public class Initializer extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // setup the broadcast action namespace string which will
+        // be used to notify upload status.
+        // Gradle automatically generates proper variable as below.
+        UploadService.NAMESPACE = BuildConfig.APPLICATION_ID;
+        // Or, you can define it manually.
+        UploadService.NAMESPACE = "ca.bcit.comp7082.Assignment1";
+    }
+}
